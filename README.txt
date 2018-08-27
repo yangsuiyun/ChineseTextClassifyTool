@@ -1,17 +1,17 @@
-# ChineseTextClassifyTool
+ï»¿# ChineseTextClassifyTool
 
-## Ä¿±ê£º½«ËùÓÐÖÐÎÄ·ÖÀà¹¤¾ß·½·¨½øÐÐÕûÀí£¬¼¯³É
+## ç›®æ ‡ï¼šå°†æ‰€æœ‰ä¸­æ–‡åˆ†ç±»å·¥å…·æ–¹æ³•è¿›è¡Œæ•´ç†ï¼Œé›†æˆ
 
-·½·¨°üÀ¨£º
-	1¡¢fasttext
-	2¡¢¶à²ã¸ÐÖª»ú
-	3¡¢SVM
-	4¡¢Naive-Bayes
-	5¡¢CNN
-	6¡¢RNN
-	7¡¢CNN+RNN
+æ–¹æ³•åŒ…æ‹¬ï¼š
+	1ã€fasttext
+	2ã€å¤šå±‚æ„ŸçŸ¥æœº
+	3ã€SVM
+	4ã€Naive-Bayes
+	5ã€CNN
+	6ã€RNN
+	7ã€CNN+RNN
 
-ÊµÏÖ·½°¸£º
-	1¡¢·Ö±ðÊµÏÖ¸÷¸ö·½·¨½øÐÐÖÐÎÄÎÄ±¾·ÖÀà
+å®žçŽ°æ–¹æ¡ˆï¼š
+	1ã€åˆ†åˆ«å®žçŽ°å„ä¸ªæ–¹æ³•è¿›è¡Œä¸­æ–‡æ–‡æœ¬åˆ†ç±»
 
 
