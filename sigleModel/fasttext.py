@@ -26,7 +26,7 @@ def load_stopwords():
 def load_SogouTCE():
     SogouTCE=[]
     SogouTCE_kv = {}
-    with open("../data/SogouTCE.txt") as F:
+    with open(root + "data/SogouTCE.txt") as F:
         for line in F:
             (url,channel)=line.split()
             SogouTCE.append(url)
@@ -43,11 +43,11 @@ def load_SogouTCE():
 ##生成后续需要的两个文件：url和content
 def text_split():
     import xml.etree.ElementTree as ET
-    tree = ET.parse("../data/news_sohusite_xml.smarty.txt")
+    tree = ET.parse(root + "data/news_sohusite_xml.smarty.txt")
     root = tree.getroot()
     
-    with open("../data/news_sohusite_url.txt",'w',encoding='utf-8') as F2:
-        with open("../data/news_sohusite_content.txt",'w',encoding='utf-8') as F3:
+    with open(root + "data/news_sohusite_url.txt",'w',encoding='utf-8') as F2:
+        with open(root + "data/news_sohusite_content.txt",'w',encoding='utf-8') as F3:
             for doc in root.findall('doc'):
                 url = doc.find('url').text
                 content = doc.find('content').text
@@ -58,8 +58,8 @@ def text_split():
 
 def load_url(SogouTCE_kv):
     labels=[]
-    with open("../data/news_sohusite_url.txt") as F:
-    #with codecs.open("../data/news_sohusite_url.txt","r",encoding='utf-8', errors='ignore') as F:
+    with open(root + "data/news_sohusite_url.txt") as F:
+    #with codecs.open(root + "data/news_sohusite_url.txt","r",encoding='utf-8', errors='ignore') as F:
         for line in F:
             for k,v in SogouTCE_kv.items():
                 if re.search(k,line,re.IGNORECASE):
@@ -77,13 +77,13 @@ def load_selecteddata(SogouTCE_kv):
     y=[]
 
     #加载content列表
-    #with codecs.open("../data/news_sohusite_content.txt", "r", encoding='utf-8', errors='ignore') as F:
-    with open("../data/news_sohusite_content.txt", encoding='utf-8') as F:
+    #with codecs.open(root + "data/news_sohusite_content.txt", "r", encoding='utf-8', errors='ignore') as F:
+    with open(root + "data/news_sohusite_content.txt", encoding='utf-8') as F:
         content=F.readlines()
         F.close()
 
     # 加载url列表
-    with open("../data/news_sohusite_url.txt", encoding='utf-8') as F:
+    with open(root + "data/news_sohusite_url.txt", encoding='utf-8') as F:
         url = F.readlines()
         F.close()
 
@@ -149,12 +149,12 @@ if __name__ == '__main__':
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
 
     #按照fasttest的要求生成训练数据和测试数据
-    dump_file(x_train,y_train,"../data/sougou_train.txt")
-    dump_file(x_test, y_test, "../data/sougou_test.txt")
+    dump_file(x_train,y_train,root + "data/sougou_train.txt")
+    dump_file(x_test, y_test, root + "data/sougou_test.txt")
 
     # train_supervised uses the same arguments and defaults as the fastText cli
     model = train_supervised(
-        input="../data/sougou_train.txt",
+        input=root + "data/sougou_train.txt",
         epoch=25, lr=0.9, wordNgrams=2, verbose=2, minCount=1
     )
-    print_results(*model.test("../data/sougou_test.txt"))
+    print_results(*model.test(root + "data/sougou_test.txt"))

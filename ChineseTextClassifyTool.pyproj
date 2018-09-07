@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{ab80f303-2a4d-4dbd-910a-7009fd116aaf}</ProjectGuid>
     <ProjectHome />
-    <StartupFile />
+    <StartupFile>test\testcnn.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -23,19 +23,54 @@
     <Content Include="data\news_sohusite_url.txt" />
     <Content Include="data\news_sohusite_xml.smarty.txt" />
     <Content Include="data\SogouTCE.txt" />
-    <Content Include="data\sougou_test.txt" />
-    <Content Include="data\sougou_train.txt" />
-    <Content Include="sigleModel\stopwords.txt" />
+    <Content Include="test\fasttext\sougou_test.txt" />
+    <Content Include="test\fasttext\sougou_train.txt" />
+    <Content Include="README.txt" />
+    <Content Include="data\stopwords.txt" />
+    <Content Include="test\测试说明.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChineseTextClassifyTool\ctct.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChineseTextClassifyTool\loaddata.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChineseTextClassifyTool\model.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChineseTextClassifyTool\model_site.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChineseTextClassifyTool\test.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChineseTextClassifyTool\train.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChineseTextClassifyTool\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="sigleModel\cnn_model.py" />
     <Compile Include="sigleModel\fasttext.py" />
     <Compile Include="sigleModel\mlp.py" />
     <Compile Include="sigleModel\rnn_model.py" />
+    <Compile Include="test\dataPreprocess.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="test\fasttextTest.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="test\testcnn.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ChineseTextClassifyTool\" />
     <Folder Include="data" />
+    <Folder Include="test\" />
     <Folder Include="sigleModel" />
+    <Folder Include="test\fasttext\" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.5" />
