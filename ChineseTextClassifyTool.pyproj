@@ -25,7 +25,7 @@
     <Content Include="data\SogouTCE.txt" />
     <Content Include="test\fasttext\sougou_test.txt" />
     <Content Include="test\fasttext\sougou_train.txt" />
-    <Content Include="README.txt" />
+    <Content Include="README.md" />
     <Content Include="data\stopwords.txt" />
     <Content Include="test\测试说明.txt" />
   </ItemGroup>
