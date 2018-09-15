@@ -4,17 +4,15 @@
 
 ### 方法包括：
 	1、fasttext
-	2、多层感知机
-	3、SVM
-	4、Naive-Bayes
-	5、CNN
-	6、BiLSTM
-	7、CNN+BiLSTM
+	2、CNN
+	3、RNN
 
-实现方案：
-	1、分别实现各个方法进行中文文本分类
 
-功能设计：
+各个模块说明：
+	1、model用于建模
+	2、train用于训练模型
+
+
 	
 	
 
